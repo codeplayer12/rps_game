@@ -27,44 +27,44 @@ def check_winner(user,comp):
         return 'Its a draw'
     else:
         return comp
-game = True
-def play_game():
-    while game:
-        """Allow play until there is a winner
-        Args
-            check_winner: Gets user input and computer input
+# game = True
+# def play_game():
+while True:
+    """Allow play until there is a winner
+    Args
+        check_winner: Gets user input and computer input
 
-        Returns
-            Winner after comparison of choice
-        """
-        try:
-            print('To play:')
-            print('Enter R for rock')
-            print('Enter P for paper')
-            print('Enter S for scissors')
-            user_choice = input('Choose an option to play: ')
-            comp = random.choice(choices)
-            if user_choice.upper() in choices:
-                result =check_winner(user_choice,comp)
-                if(result==user_choice and result!= comp):
-                    print('User choice: {} & Computer choice: {}'.format(user_choice,comp))
-                    print('User won')
-                    print('exiting ...')
-                    break
-                elif(result==comp and result!=user_choice):
-                    print('User choice: {} \n Computer choice: {}'.format(user_choice,comp))
-                    print('Computer has won')
-                    print('exiting ...')
-                    break
-                elif(result=='none'):
-                    print('its a draw ^^')
-                    continue     
-            else:
-                print('Invalid choice:\n')
-                continue 
-        except KeyboardInterrupt or KeyError :
-                print("\nexiting ....")
+    Returns
+        Winner after comparison of choice
+    """
+    try:
+        print('To play:')
+        print('Enter R for rock')
+        print('Enter P for paper')
+        print('Enter S for scissors')
+        user_choice = input('Choose an option to play: ')
+        comp = random.choice(choices)
+        if user_choice.upper() in choices:
+            result =check_winner(user_choice,comp)
+            if(result==user_choice and result!= comp):
+                print('User choice: {} & Computer choice: {}'.format(user_choice,comp))
+                print('User won')
+                print('exiting ...')
                 break
+            elif(result==comp and result!=user_choice):
+                print('User choice: {} \n Computer choice: {}'.format(user_choice,comp))
+                print('Computer has won')
+                print('exiting ...')
+                break
+            elif(result=='none'):
+                print('its a draw ^^')
+                continue     
+        else:
+            print('Invalid choice:\n')
+            continue 
+    except KeyboardInterrupt or KeyError :
+            print("\nexiting ....")
+            break
 
-if __name__ =='main':
-    play_game()
+# if __name__ =='main':
+#     play_game()
